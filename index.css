@@ -47,3 +47,44 @@ wiki-subtitle {
     display:flex;
     justify-content: center;
 }
+
+.search-container {
+    display: flex;
+    width: 100%;
+    max-width: 500px; /* Ширина поисковой строки */
+    border: 1px solid #ccc;
+
+}
+.search-container input {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    outline: none;
+
+}
+.search-container button {
+    padding: 8px 12px;
+    background: #ccc;
+    border-left: 1px solid #ccc;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    cursor: pointer;
+  font-weight: bold;
+}
+/* Правая часть */
+.header-right { 
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    flex: 1; /* Сделать части одинаковыми для равновесия */
+
+}
+.nav-ling {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+}
+.nav-link:hover {
+    text-decoration:underline;
+}
