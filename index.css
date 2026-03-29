@@ -25,3 +25,25 @@
 
 }
 
+.logo-text {
+    display: flex;
+    flex-direction: column;
+   
+}
+.wiki-title {
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 1px;
+
+}
+wiki-subtitle {
+    font-size: 11px;
+    color:#ccc;
+    
+}
+/* Центральная часть. Поиск */
+.header-center {
+    flex: 2; /* Занимает больше места что бы быть по центру */
+    display:flex;
+    justify-content: center;
+}
