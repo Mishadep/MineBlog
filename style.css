@@ -23,13 +23,6 @@ body {
     align-items: flex-start; /* Выровнял по левому краю */
 }
 
-.right-title {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
 .wiki-title {
     font-size: 18px; /* Чуть увеличил для читаемости */
     color: #AAAAAA;
@@ -41,10 +34,10 @@ body {
     background: none;
     border: none;
     color: white;
-    font-size: 23px;
+    font-size: 20px;
     cursor: pointer;
     padding: 5px;
-    margin-right: 7px; /* Отступ от кнопок Sign in */
+    margin-right: 5px; /* Отступ от кнопок Sign in */
     transition: transform 0.1s;
 }
 
@@ -58,8 +51,8 @@ body {
     border: 3px solid #000;
     border-top-color: #BDBDBD;
     border-left-color: #BDBDBD;
-    color: #00ff00;
-    padding: 15px 20px;
+    color: white;
+    padding: 10px 15px;
     text-decoration: none;
     font-size: 10px;
     cursor: pointer;
@@ -82,12 +75,9 @@ body {
 
 .main-title {
     font-size: 60px; /* Сделал покрупнее, раз она теперь главная в центре */
-    color: #00ff00;
-    text-shadow: 1px 1px 1px #080101;
+    color: #FFFFFF;
+    text-shadow: 4px 4px 0px #000000;
     margin-bottom: 30px;
-    ;
-
-
 }
 
 /* Футер */
