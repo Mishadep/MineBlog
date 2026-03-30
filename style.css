@@ -20,26 +20,37 @@ body {
 .header-left {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    align-items: flex-start; /* Выровнял по левому краю */
 }
 
-.logo-img {
-    width: 121px;
-    height: 50px;
-    image-rendering: pixelated; /* Чтобы лого не мылилось */
-    border: 2px solid rgb(0, 0, 0);
+.right-title {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .wiki-title {
     display: block;
     font-size: 14px;
     color: #AAAAAA;
+    letter-spacing: 1px;
 }
 
-.wiki-subtitle {
-    font-size: 8px;
-    color: #555555;
+/* Кнопка лупы */
+.search-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 7px; /* Отступ от кнопок Sign in */
+    transition: transform 0.1s;
+}
+
+.search-btn:hover {
+    transform: scale(1.2); /* Немного увеличивается при наведении */
 }
 
 /* Кнопки в стиле Minecraft */
@@ -70,19 +81,13 @@ body {
 }
 
 .main-title {
-    font-size: 40px;
-    color: #FFFFFF;
-    text-shadow: 4px 4px 0px #3f3f3f;
+    font-size: 60px; /* Сделал покрупнее, раз она теперь главная в центре */
+    color: #00ff00;
+    text-shadow: 1px 1px 1px #080101;
     margin-bottom: 30px;
-}
+    ;
 
-.mc-input {
-    padding: 12px;
-    border: 3px solid #000;
-    background-color: #000;
-    color: #32CD32; /* Зеленый текст в поиске */
-    font-family: inherit;
-    width: 300px;
+
 }
 
 /* Футер */
