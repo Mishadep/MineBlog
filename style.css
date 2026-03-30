@@ -78,7 +78,7 @@ body {
 /* Центральная часть */
 .content {
     text-align: center;
-    margin-top: 150px; /* Чуть ниже, так как поиска больше нет */
+    margin-top: 30px; /* Чуть ниже, так как поиска больше нет */
 }
 
 .main-title {
@@ -147,6 +147,3 @@ body {
     margin-top: 0 !important;
 }
 
-h1 { 
-    margin-top: -30px !important;
-}
