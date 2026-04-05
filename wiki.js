@@ -24,32 +24,18 @@ if (themeBtn) {
     };
 }
 
-const burgerMenu = document.querySelector('.burger-menu');
-const dropdown = document.querySelector('.dropdown-content');
-if (burgerMenu && dropdown) {
-    burgerMenu.addEventListener('click', function() {
-        if (dropdown.style.display === 'block') {
-            dropdown.style.display = 'none';
-        } else {
-            dropdown.style.display = 'block';
-        }
+const burgerTrigger = document.querySelector('.burger-trigger');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+if (burgerTrigger && dropdownMenu) {
+    burgerTrigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
     });
 
     window.addEventListener('click', function(event) {
-        if (!event.target.matches('.burger-menu') && !event.target.matches('.burger-menu span')) {
-            if (dropdown.style.display === 'block') {
-                dropdown.style.display = 'none';
-            }
+        if (!event.target.closest('.burger-trigger') && !event.target.closest('.dropdown-menu')) {
+            dropdownMenu.style.display = 'none';
         }
-    });
-}
-
-const clickSound = new Audio('templates/click.mp3');
-const buttons = document.querySelectorAll('.big-clickable-button');
-if (buttons.length) {
-    buttons.forEach(button => {
-        button.addEventListener('click', () => {
-            clickSound.play();
-        });
     });
 }

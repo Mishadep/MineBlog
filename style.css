@@ -1,13 +1,19 @@
-/* Общие настройки */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Russo One', sans-serif;
+    font-style: normal;
     background-color: #313131;
     color: white;
+    background-image: url('templates/logo main.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
-/* Шапка сайта */
 .minecraft-header {
     display: flex;
     justify-content: space-between;
@@ -15,7 +21,6 @@ body {
     padding: 10px 20px;
     background-color: #1e1e1e;
     border-bottom: 4px solid #000;
-    
 }
 
 .header-left {
@@ -32,6 +37,8 @@ body {
 }
 
 .logo-section {
+    display: flex;
+    align-items: center;
     gap: 12px;
 }
 
@@ -42,13 +49,14 @@ body {
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .burger-trigger span {
     height: 3px;
     width: 100%;
     display: block;
-    background-color: #FFD700;
+    background-color: #fafafa;
     border-radius: 2px;
 }
 
@@ -62,12 +70,11 @@ body {
 }
 
 .wiki-title {
-    font-size: 18px; /* Чуть увеличил для читаемости */
+    font-size: 18px;
     color: #AAAAAA;
     letter-spacing: 1px;
 }
 
-/* Кнопка лупы */
 .search-btn {
     background: none;
     border: none;
@@ -75,15 +82,14 @@ body {
     font-size: 23px;
     cursor: pointer;
     padding: 5px;
-    margin-right: 7px; /* Отступ от кнопок Sign in */
+    margin-right: 7px;
     transition: transform 0.1s;
 }
 
 .search-btn:hover {
-    transform: scale(1.2); /* Немного увеличивается при наведении */
+    transform: scale(1.2);
 }
 
-/* Кнопки в стиле Minecraft */
 .mc-button {
     background-color: #504f4f;
     border: 8px solid #000;
@@ -105,24 +111,22 @@ body {
     border-left-color: #272727;
 }
 
-/* Центральная часть */
 .content {
     text-align: center;
-    margin-top: 30px; /* Чуть ниже, так как поиска больше нет */
+    margin-top: 30px;
 }
 
 .main-title {
-    font-size: 60px; /* Сделал покрупнее, раз она теперь главная в центре */
+    font-size: 60px;
     color: #ffffff;
     text-shadow: 1px 1px 1px #080101;
     margin-bottom: 5px;
     height: auto;
     min-height: 60px;
-
-
+    margin: 0;
+    line-height: 1;
 }
 
-/* Футер */
 .minecraft-footer {
     position: fixed;
     bottom: 0;
@@ -133,93 +137,18 @@ body {
     padding: 10px 0;
     color: #777;
 }
+
 .hero {
     text-align: center;
-    padding-top: 20px !important;
-    margin-top: 0 !important;
-}
-
-.cta-button {
-    background-color: #ffffff;
-    color: rgb(49, 41, 41);
-    border: none;
-    padding: 15px 30px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.card {
-    background-color: #1d1d1d;
-    width: 250px;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-
-}
-.card img {
-    width: 100%;
-    border-radius: 5px;
-}
-.card-link {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-}
-.home-page {
-   margin-top: 0px; 
-    text-align: center;
-}
-.reading-page {
-    margin-top: 50px; /* Это опустит карточки ниже, чтобы они не липли к кнопке Назад */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding-top: 20px;
+    margin-top: 0;
 }
 
 .main-content .hero {
-    padding-top: 20px !important;
-    margin-top: 0 !important;
+    padding-top: 20px;
+    margin-top: 0;
 }
-.cta-button {
-    display: inline-block;
-    text-decoration: none;
-}
-cta-button:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.05); 
-    transition: 0.3s;
-}
-.card:hover {
-    border: 2px solid #333;
-    cursor:pointer;
-}
-.back-link {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    z-index:1000;
-    color: #292929;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 20px;
-    z-index: 9999;
-    font-size: 20px;
-    background-color: #fafafa;
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 10px 20px; 
-    transition: all 0.3s ease;
 
-
-}
 .cards-container {
     display: flex;
     justify-content: center;
@@ -227,158 +156,93 @@ cta-button:hover {
     gap: 25px;
     padding: 50px 20px;
 }
+
 .card {
     background: #1c1c1c;
     border: 2px solid #333;
     border-radius: 12px;
     width: 250px;
     padding: 20px;
-    display: flex;           /* Включаем гибкость */
-    flex-direction: column;  /* Всё в столбик */
-    align-items: center;     /* Центрируем по горизонтали */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     transition: 0.3s;
-    min-height: 350px;       /* Одинаковая высота для всех карточек */
+    min-height: 350px;
 }
-.card-image-box {
-    width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 15px;
-}
+
 .card img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 150px;
     object-fit: contain;
+    border-radius: 5px;
+    margin-bottom: 10px;
 }
+
 .card h3 {
     margin: 10px 0;
     font-size: 20px;
     color: white;
 }
-.card .cta-button {
-    margin-top: auto;        /* Магия: выталкивает кнопку в самый низ карточки */
-    background: #525252;
-    color: white;
-    padding: 10px 25px;
-    border-radius: 5px;
-    text-decoration: none;
-    width: 80%;
+
+.card p {
+    flex-grow: 1;
+    margin: 10px 0;
 }
+
+.card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+}
+
 .card:hover {
     border-color: #454644;
     transform: translateY(-5px);
-}
-
-.back-link:hover {
-    background-color: #ffffff;
-    color: white;
-    transform: scale(1.1);
-    box-shadow: 0 0 10px #333;
-}
-.margin-top {
-    margin-top: 20px;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-body {
-  background-image: url('templates/logo main.png'); 
-    background-size: cover;          /* Растянуть на весь экран */
-    background-position: center;     /* Центрировать */
-    background-attachment: fixed;    /* Фон не двигается при скролле */
-    background-repeat: no-repeat;    /* Не дублировать */
-    
-    margin: 0;
-    color: white;
-    font-family: 'VT323', monospace;
-    image-rendering: pixelated;
-}
-.reading-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 30px;
-    background: rgba(0, 0, 0, 0.8); /* Темная полоса сверху */
-    border-bottom: 4px solid #555;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-.back-button, .search-bar button {
-    background-color: #7c7c7c;
-    border: 3px solid #000;
-    border-top-color: #bbb;
-    border-left-color: #bbb;
-    color: #e0e0e0;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-size: 20px;
     cursor: pointer;
 }
-.back-button:hover, .search-bar button:hover {
-    background-color: #181818; /* Зеленеет при наведении */
-    color: white;
-}
-.search-bar input {
-    background: #000;
-    border: 2px solid #555;
-    color: #ffffff;
-    padding: 8px;
-    font-family: 'VT323', monospace;
-    font-size: 18px;
-    outline: none;
-}
-/* Контейнер для всей шапки */
-.header-container {
-    display: flex;
-    justify-content: space-between; /* Распределяет лого влево, поиск вправо */
-    align-items: center;
-    padding: 0 20px;
-    width: 100%;
-}
 
-/* Секция с бургером и текстом */
-.logo-section {
-    display: flex;
-    align-items: center; /* Центрирует полоски и текст по вертикали */
-    gap: 15px; /* Расстояние между полосками и надписью */
-}
-
-/* Сами полоски теперь не будут прилипать к краю */
-.burger-trigger {
-    width: 25px;
-    height: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    flex-shrink: 0; /* Чтобы полоски не сжимались */
-}
-
-.burger-trigger span {
-    height: 3px;
-    background-color: #ffffff;
-}
-
-/* Убираем лишние отступы у заголовка, чтобы он не прыгал */
-.main-title {
-    margin: 0;
-    line-height: 1;
-}
-
-/* Позиция выпадающего меню относительно полосок */
 .dropdown-menu {
     position: absolute;
-    top: 30px;
+    top: 40px;
     left: 0;
-    background: #1a1a1a;
-    border: 2px solid #000000;
+    background: #504f4f;
+    border: 3px solid #000;
+    border-top-color: #636060;
+    border-left-color: #696969;
+    background-color: #504f4f;
+    box-shadow: inset -3px -3px 0px #404040;
     display: none;
     z-index: 1000;
+    flex-direction: column;
+    min-width: 200px;
+}
+
+.dropdown-menu.show {
+    display: flex;
+}
+
+.menu-item {
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 14px;
+    cursor: pointer;
+    display: block;
+    border-bottom: 2px solid #404040;
+    transition: background-color 0.2s;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    background-color: #636060;
+    color: #ffffff;
 }
 
 .menu-container:hover .dropdown-menu {
-    display: block;
+    display: flex;
 }
