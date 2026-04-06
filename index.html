@@ -10,19 +10,20 @@
 </head>
 <body>
 <header class="minecraft-header">
-    <div class="header-left logo-section">
-        <div class="burger-trigger" title="Меню">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div id="mySidebar" class="sidebar">
+        <div class="sidebar-header">
+            <span class="close-btn" onclick="toggleNav()">×</span>
+            <h2 class="menu-title">Меню</h2>
         </div>
-        <div class="dropdown-menu">
-            <a href="card/crafting.html" class="menu-item">Рецепты крафта</a>
-            <a href="card/mobs.html" class="menu-item">Мобы</a>
-            <a href="card/biomes.html" class="menu-item">Биомы</a>
-            <a href="card/potion.html" class="menu-item">Зелья</a>
-        </div>
-        <div class="titles">
+        <a href="index.html"><img src="templates/Главная.jpg" class="menu-icon"> Главная</a>
+    <a href="reading.html"><img src="templates/три полоски.png" class="menu-icon"> Разделы</a>
+    
+    </div>
+    <div class="burger-trigger" onclick="toggleNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
             <a href="index.html" class="wiki-title">MINEBLOG</a>
         </div>
     </div>
