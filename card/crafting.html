@@ -2,15 +2,37 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Рецепты крафта</title>
-    <link rel="stylesheet" href="../card.css">
+    <title>MineBlog - База Крафтов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="crafting.css">
 </head>
-<body class="section-page">
-    <div class="section-curtain">
-        <a href="../index.html" class="back-button">← НАЗАД</a>
-        <h1 class="section-title">Рецепты крафта</h1>
-        <p class="section-text">Здесь будет простой раздел о рецептах в Minecraft.</p>
+<body>
+    <header class="header"><a href="../index.html">MINEBLOG</a></header>
+    
+    <div class="list-container">
+        <h1 class="main-title">ПРЕДМЕТЫ ДЛЯ КРАФТА</h1>
+        <div id="itemList">
+            </div>
     </div>
+
+    <script src="database.js"></script>
+    <script>
+        const listContainer = document.getElementById('itemList');
+        const itemsArray = Object.keys(mc_database).map(id => ({ id, ...mc_database[id] }));
+
+        function render() {
+            const categories = [...new Set(itemsArray.map(i => i.category))];
+            
+            listContainer.innerHTML = categories.map(cat => `
+                <h2 class="category-title">${cat.toUpperCase()}</h2>
+                <div class="item-group">
+                    ${itemsArray.filter(i => i.category === cat).map(item => `
+                        <a href="item.html?id=${item.id}" class="item-link">${item.name.toUpperCase()}</a>
+                    `).join('')}
+                </div>
+            `).join('');
+        }
+        render();
+    </script>
 </body>
 </html>

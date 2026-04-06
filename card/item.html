@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>MineBlog - Просмотр крафта</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="crafting.css">
+</head>
+<body>
+    <header class="header"><a href="crafting.html">← НАЗАД К СПИСКУ</a></header>
+    
+    <main class="item-card" id="itemData">
+        </main>
+
+    <script src="database.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        const item = mc_database[id];
+
+        if (item) {
+            document.getElementById('itemData').innerHTML = `
+                <h1 class="item-title">${item.name.toUpperCase()}</h1>
+                <img src="../templates/${id}.png" class="main-img" onerror="this.src='../templates/default.png'">
+                
+                <div class="crafting-container">
+                    <div class="crafting-grid">
+                        ${item.recipe.map(res => `
+                            <div class="slot">${res ? `<img src="../templates/${res}.png">` : ''}</div>
+                        `).join('')}
+                    </div>
+                </div>
+                
+                <p class="item-description">${item.desc}</p>
+                <div style="font-size: 10px; color: #888; margin-top: 10px;">Категория: ${item.category}</div>
+            `;
+        } else {
+            document.getElementById('itemData').innerHTML = "<h1>Предмет не найден</h1>";
+        }
+    </script>
+</body>
+</html>
